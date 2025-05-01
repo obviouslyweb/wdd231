@@ -1,20 +1,26 @@
-import { getParkData } from "./parkService.mjs";
+import { getParkData, getInfoLinks } from "./parkService.mjs";
+import { mediaCardTemplate } from "./templates.mjs";
+import { setHeaderFooter } from "./setHeaderFooter.mjs";
+
 const parkData = getParkData();
+const parkInfoLinks = getInfoLinks();
 
-// Set disclaimer
-const disclaimer =  document.querySelector(".disclaimer > a");
-disclaimer.href = parkData.url;
-disclaimer.innerHTML = parkData.fullName;
+function setMainInfo(data) {
+    // Update park name & description
+    const main_title = document.querySelector(".park-name");
+    const main_description = document.querySelector(".park-description");
+    main_title.innerHTML = parkData.fullName;
+    main_description.innerHTML = parkData.description;
+}
 
-// Set page title
-document.title = parkData.fullName + " (U.S. National Park Service)";
+function createInfoCards() {
+    const cardHolder = document.querySelector('.park-info-card-holder');
+    cardHolder.innerHTML = '';
+    parkInfoLinks.forEach(info =>{
+        cardHolder.innerHTML += mediaCardTemplate(info);
+    });
+}
 
-// Set park image
-const hero_image = document.querySelector(".hero-banner > img");
-hero_image.src = parkData.images[0].url;
-
-// Update park name, designation, and states
-const hero_title = document.querySelector(".hero-title");
-const hero_subtitle = document.querySelector(".hero-subtitle");
-hero_title.innerHTML = parkData.name;
-hero_subtitle.innerHTML = parkData.designation + "<br>" + parkData.states;
+setMainInfo(parkData);
+createInfoCards();
+setHeaderFooter(parkData);
