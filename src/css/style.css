@@ -305,11 +305,10 @@ main p {
   color: black;
 }
 
-@media (min-width: 814px) {
+@media (min-width: 500px) {
   .park-info-card-holder {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem; /* spacing between cards */
+    flex-direction: row;
+    gap: 1rem;
   }
 }
 
