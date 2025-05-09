@@ -1,0 +1,17 @@
+/* Footer styles */
+
+.park-footer {
+  background-image: url('../images/topo_pattern.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-left: 1.3em;
+  padding-right: 1.3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  font-size: 1em;
+}
+
+.contact-text {
+  color:#333;
+}

@@ -1,0 +1,62 @@
+/* Header styling */
+
+.site-title {
+  display: flex;
+  align-items: center;
+}
+.site-title > span {
+  font-size: 1rem;
+  margin-left: 0.3em;
+}
+
+.global-header {
+  background-color: var(--bs-black);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  /* padding: 0.3em 1rem; */
+  fill: white;
+}
+
+.global-header a:link,
+.global-header a:visited,
+#park-header a:link,
+#park-header a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  height: 0;
+  width: 0;
+  margin: 0.5em;
+  display: inline-block;
+  border-top: 34px solid var(--bs-light-green);
+  border-left: 13px solid transparent;
+  border-right: 13px solid transparent;
+}
+
+.global-header .icon {
+  width: 20px;
+  height: 20px;
+}
+
+.global-header-right-side {
+  display: flex;
+  align-items: center;
+}
+.global-header-right-side .search-icon {
+  padding: 0 1rem;
+  margin-top: 6px;
+}
+.global-header-right-side button {
+  border: none;
+  color: white;
+  background-color: transparent;
+  font-size: 1rem;
+  padding: 1.2em;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  border-left: 1px solid var(--bs-grey-5);
+}
