@@ -26,13 +26,13 @@ export function footerTemplate(info) {
 
     return `
       <section class="park-contact">
-        <h2 class="contact-title">Contact Info</h2>
+        <h3 class="contact-title">Contact Info</h3>
           <div class="contact-block">
-            <h3 class="contact-subtitle">Mailing Address:</h3>
+            <h4 class="contact-subtitle">Mailing Address:</h4>
             <p class="contact-text">${mailing.line1}<br>${mailing.city}, ${mailing.stateCode} ${mailing.postalCode}</p>
           </div>
           <div class="contact-block">
-            <h3 class="contact-subtitle">Phone:</h3>
+            <h4 class="contact-subtitle">Phone:</h4>
             <p class="contact-text">${number.phoneNumber}</p>
           </div>
       </section>
