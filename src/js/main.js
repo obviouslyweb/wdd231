@@ -7,8 +7,7 @@ async function init() { // Main function to initialize content
     const links = getInfoLinks(parkData.images); // Update links for images
 
     setHeaderFooter(parkData); // Set header & footer using data from park
-    setParkIntro(parkData); // Set park title & intro description
-    setParkInfoLinks(links); // Creates info cards & links for content below intro
+    setParkIntro(parkData); // Set park title & intro description, creates info cards & sets links for those
 }
 
 function setParkIntro(data) { // Update park name & description; create info cards
