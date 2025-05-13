@@ -184,7 +184,7 @@ const park = { // Core Yellowstone park JSON. Still used to act as fallback for 
 };
 
 export async function getParkData() { // Obtains & returns park data from NPS API; triggered by main.js.
-  const parkData = await getJson("parks?parkCode=yell");
+  const parkData = await getJson("parks?parkCode=ever"); // TO CHANGE PARK: edit park code
   return parkData.data[0];
 }
 
