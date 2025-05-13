@@ -2,7 +2,7 @@ const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
 // "baseUrl + resourcePath + parameters" for API calls
 
-const park = {
+const park = { // Core Yellowstone park JSON. Still used to act as fallback for image files in parkInfoLinks JSON.
   id: "F58C6D24-8D10-4573-9826-65D42B8B83AD",
   url: "https://www.nps.gov/yell/index.htm",
   fullName: "Yellowstone National Park",
@@ -183,12 +183,12 @@ const park = {
   designation: "National Park"
 };
 
-export async function getParkData() {
+export async function getParkData() { // Obtains & returns park data from NPS API; triggered by main.js.
   const parkData = await getJson("parks?parkCode=yell");
   return parkData.data[0];
 }
 
-async function getJson(url) {
+async function getJson(url) { // Gets the total JSON data from the provided url link and given options.
   const options = {
     method: "GET",
     headers: {
@@ -203,7 +203,7 @@ async function getJson(url) {
   return data;
 }
 
-const parkInfoLinks = [
+const parkInfoLinks = [ // JSON content for parkInfoLinks. If API call fails, will default to images stored in park JSON.
   {
     name: "Current Conditions &#x203A;",
     link: "conditions.html",
