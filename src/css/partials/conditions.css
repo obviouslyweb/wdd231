@@ -61,3 +61,17 @@
     padding: 0;
     margin: 0.7px;
 }
+
+main {
+  margin: 1em;
+}
+
+main h1 {
+  padding-top: 10px;
+  font-family: 'Times New Roman', 'Tinos', Times, serif, Helvetica, Arial, sans-serif;
+}
+
+main p {
+  font-family: var(--bs-body-font-family);
+  padding-bottom: 10px;
+}

@@ -1,6 +1,8 @@
 import { getParkData, getParkAlerts, getVisitorCenterData } from "./parkService.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
 import { alertTemplate, visitorCenterTemplate, activitiesTemplate } from "./templates.mjs";
+import "../css/styles.css";
+import "../css/partials/conditions.css";
 
 function setAlerts(alerts) {
     const alertsContainer = document.querySelector('.alerts > ul');
@@ -34,8 +36,3 @@ async function init() { // Main function to initialize content
 }
 
 init();
-
-// TO-DO:
-// 1. Get the alerts from the API and create a template to display them
-// 2. Get informataion from API regarding visitors centers and display a list of them, as well as opening/closing date and current status of operation
-// 3. Get list of activities from park and display them
