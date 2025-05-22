@@ -49,3 +49,15 @@
 .visitor > details > ul > li > p {
     padding: 0;
 }
+
+.activities > details {
+    border: 1px solid var(--bs-grey-3);
+    margin: 0.5rem;
+    padding: 10px 10px 10px;
+    font-size: 1.2em;
+}
+
+.activities > details > ul > li > p {
+    padding: 0;
+    margin: 0.7px;
+}
