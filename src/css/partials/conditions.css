@@ -1,1 +1,31 @@
 /* Conditions page styles */
+
+.alerts > ul {
+    list-style: none;
+    padding: 0;
+}
+
+.alert {
+    display: flex;
+    gap: 1em;
+    margin: 0.5rem;
+    padding: 0.5rem 0 0.8rem 0;
+    border-bottom: 1px solid var(--bs-grey-3);
+}
+
+.alert > svg {
+    height: 30px;
+    width: 30px;
+    margin: 0.25em;
+    flex: 0 0 auto;
+}
+
+.alert h3 {
+    margin: 0;
+    font-size: 1.2em;
+    padding-bottom: 10px;
+}
+
+.alert p {
+    margin: 0;
+}
