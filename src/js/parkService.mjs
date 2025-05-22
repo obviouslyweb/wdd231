@@ -1,5 +1,6 @@
 const baseUrl = "https://developer.nps.gov/api/v1/";
 const apiKey = import.meta.env.VITE_NPS_API_KEY;
+const parkAPICode = "ever";
 // "baseUrl + resourcePath + parameters" for API calls
 
 const park = { // Core Yellowstone park JSON. Still used to act as fallback for image files in parkInfoLinks JSON.
@@ -184,8 +185,13 @@ const park = { // Core Yellowstone park JSON. Still used to act as fallback for 
 };
 
 export async function getParkData() { // Obtains & returns park data from NPS API; triggered by main.js.
-  const parkData = await getJson("parks?parkCode=ever"); // TO CHANGE PARK: edit park code
+  const parkData = await getJson(`parks?parkCode=${parkAPICode}`); // TO CHANGE PARK: edit park code
   return parkData.data[0];
+}
+
+export async function getParkAlerts() { // Obtains & returns park alert data from NPS API; triggered by conditions.js.
+  const parkAlerts = await getJson(`alerts?parkCode=${parkAPICode}`);
+  return parkAlerts.data;
 }
 
 async function getJson(url) { // Gets the total JSON data from the provided url link and given options.
