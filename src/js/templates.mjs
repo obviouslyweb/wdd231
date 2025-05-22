@@ -22,14 +22,25 @@ export function alertTemplate(alert) {
     default:
       alertType = alert.category.toLowerCase();
   }
-  return `<li class="alert">
-  <svg class="icon" focusable="false" aria-hidden="true">
-    <use xlink:href="${spritePath}#alert-${alertType}"></use>
-  </svg>
-  <div>
-    <h3 class="alert-${alertType}">${alert.title}</h3>
-    <p>${alert.description}</p>
-  </div></li>`;
+  return `
+  <li class="alert">
+    <svg class="icon" focusable="false" aria-hidden="true">
+      <use xlink:href="${spritePath}#alert-${alertType}"></use>
+    </svg>
+    <div>
+      <h3 class="alert-${alertType}">${alert.title}</h3>
+      <p>${alert.description}</p>
+    </div>
+  </li>`;
+}
+
+export function visitorCenterTemplate(center) {
+  return `
+  <li class="center">
+    <h3>${center.name}</h3>
+    <p class="center-desc">${center.description}</p>
+    <p class="center-directions">${center.directionsInfo}</p>
+  </li>`;
 }
 
 function getMailingAddress(addresses) {

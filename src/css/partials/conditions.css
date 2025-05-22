@@ -29,3 +29,23 @@
 .alert p {
     margin: 0;
 }
+
+.visitor > details {
+    border: 1px solid var(--bs-grey-3);
+    margin: 0.5rem;
+    padding: 10px 10px 10px;
+    font-size: 1.2em;
+}
+
+.visitor > details > ul {
+    list-style: none;
+    padding: 0;
+}
+
+.visitor > details > ul > li {
+    border-bottom: 1px solid var(--bs-grey-3);
+}
+
+.visitor > details > ul > li > p {
+    padding: 0;
+}

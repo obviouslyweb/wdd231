@@ -1,20 +1,29 @@
-import { getParkData, getParkAlerts } from "./parkService.mjs";
+import { getParkData, getParkAlerts, getVisitorCenterData } from "./parkService.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
-import { alertTemplate } from "./templates.mjs";
-
-async function init() { // Main function to initialize content
-    const parkData = await getParkData(); // Obtain park data from API
-    const alerts = await getParkAlerts();
-    setHeaderFooter(parkData); // Set header & footer using data from park
-    setAlerts(alerts);
-}
+import { alertTemplate, visitorCenterTemplate } from "./templates.mjs";
 
 function setAlerts(alerts) {
     const alertsContainer = document.querySelector('.alerts > ul');
     alertsContainer.innerHTML = "";
     const html = alerts.map(alertTemplate);
-    console.log(html);
     alertsContainer.insertAdjacentHTML("afterbegin", html.join(""));
+}
+
+function setVisitorCenters(visitorcenters) {
+    const visitorCenterContainer = document.querySelector(`.visitor > details > ul`);
+    visitorCenterContainer.innerHTML = "";
+    const html = visitorcenters.map(visitorCenterTemplate); // ADD FUNCTION IN HERE!
+    console.log(html);
+    visitorCenterContainer.insertAdjacentHTML("afterbegin", html.join(""));
+}
+
+async function init() { // Main function to initialize content
+    const parkData = await getParkData(); // Obtain park data from API
+    const alerts = await getParkAlerts();
+    const visitorcenters = await getVisitorCenterData();
+    setHeaderFooter(parkData); // Set header & footer using data from park
+    setAlerts(alerts); // Set park alerts
+    setVisitorCenters(visitorcenters); // Set park visitor centers
 }
 
 init();

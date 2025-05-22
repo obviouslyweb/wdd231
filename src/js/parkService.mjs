@@ -194,6 +194,11 @@ export async function getParkAlerts() { // Obtains & returns park alert data fro
   return parkAlerts.data;
 }
 
+export async function getVisitorCenterData() { // Obtains & returns park alert data from NPS API; triggered by conditions.js.
+  const parkVisitorCenter = await getJson(`visitorcenters?parkCode=${parkAPICode}`);
+  return parkVisitorCenter.data;
+}
+
 async function getJson(url) { // Gets the total JSON data from the provided url link and given options.
   const options = {
     method: "GET",
@@ -234,7 +239,7 @@ const parkInfoLinks = [ // JSON content for parkInfoLinks. If API call fails, wi
 
 export function getInfoLinks(data) { // This function replaces the hardcoded images in the parkInfoLinks json with data from the NPS API.
   const withUpdatedImages = parkInfoLinks.map((item, index) => {
-    item.image = data[index + 2].url;
+    item.image = data[index + 1].url;
     return item;
   });
   return withUpdatedImages;
