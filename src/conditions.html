@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/styles.css" />
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/conditions.js"></script>
   </head>
   <body>
     <p class="disclaimer">
@@ -106,10 +106,26 @@
       </section>
     </header>
     <main id="main">
-       <section class="park-details">
-        <h1 class="park-name">Park Name</h1>
-        <p class="park-description">Park Description</p>
-        <div class="park-info-card-holder">
+       <!-- <section class="park-details"> -->
+        <h1 class="conditions-name">Current Conditions</h1>
+        <div class="conditions-section" id="services">
+          <h2 class="conditions-section-header">Alerts</p>
+        </div>
+        <div class="conditions-section" id="visitor">
+          <h2 class="conditions-section-header">Visitor Services</p>
+          <details class="accordion" name="condition-acc">
+            <summary>Activities</summary>
+            Element one
+            Element two
+          </details>
+        </div>
+        <div class="conditions-section" id="activities">
+          <h2 class="conditions-section-header">Activities</p>
+          <details class="accordion" name="condition-acc">
+            <summary>Activities</summary>
+            Element one
+            Element two
+          </details>
         </div>
       </section>
     </main>
