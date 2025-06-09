@@ -1,8 +1,8 @@
 import { getParkData, getInfoLinks } from "./parkService.mjs";
 import { mediaCardTemplate } from "./templates.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
-import "../css/styles.css";
-import "../css/partials/home.css";
+import "../css/styles.css"; // Enabled via Vite
+import "../css/partials/home.css"; // Enabled via Vite
 
 async function init() { // Main function to initialize content
     const parkData = await getParkData(); // Obtain park data from API

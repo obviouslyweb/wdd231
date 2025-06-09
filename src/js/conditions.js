@@ -1,8 +1,8 @@
 import { getParkData, getParkAlerts, getVisitorCenterData } from "./parkService.mjs";
 import { setHeaderFooter } from "./setHeaderFooter.mjs";
 import { alertTemplate, visitorCenterTemplate, activitiesTemplate } from "./templates.mjs";
-import "../css/styles.css";
-import "../css/partials/conditions.css";
+import "../css/styles.css"; // Enabled via Vite
+import "../css/partials/conditions.css"; // Enabled via Vite
 
 function setAlerts(alerts) {
     const alertsContainer = document.querySelector('.alerts > ul');
