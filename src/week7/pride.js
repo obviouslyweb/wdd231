@@ -34,20 +34,14 @@ function inputQuotes(quotes) {
     quote_button.classList.add("hidden");
 }
 
-function checkQuotes() {
-    const storedQuotes = localStorage.getItem("pride-prejudice");
-    if (storedQuotes) {
-        quote_list.removeChild(no_quotes_remind);
-        quotes = JSON.parse(storedQuotes);
-        inputQuotes(quotes);
-    }
-}
+// function checkQuotes() {
+//     const storedQuotes = localStorage.getItem("pride-prejudice");
+//     if (storedQuotes) {
+//         quote_list.removeChild(no_quotes_remind);
+//         quotes = JSON.parse(storedQuotes);
+//         inputQuotes(quotes);
+//     }
+// }
 
 quote_button.addEventListener("click", getQuotes);
 checkQuotes();
-
-// Once checked in, your site should be accessible at https://<your-netlify-name-here>.netlify.app/week7/pride.html
-
-// Style the button so that it uses an animation to “pulse” (grow and shrink) the button.
-
-// Add some style to the page by updating the font, font-size, background colors, button color, padding, margin and text alignment as you see fit.s
