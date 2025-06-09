@@ -34,14 +34,14 @@ function inputQuotes(quotes) {
     quote_button.classList.add("hidden");
 }
 
-// function checkQuotes() {
-//     const storedQuotes = localStorage.getItem("pride-prejudice");
-//     if (storedQuotes) {
-//         quote_list.removeChild(no_quotes_remind);
-//         quotes = JSON.parse(storedQuotes);
-//         inputQuotes(quotes);
-//     }
-// }
+function checkQuotes() {
+    const storedQuotes = localStorage.getItem("pride-prejudice");
+    if (storedQuotes) {
+        quote_list.removeChild(no_quotes_remind);
+        quotes = JSON.parse(storedQuotes);
+        inputQuotes(quotes);
+    }
+}
 
 quote_button.addEventListener("click", getQuotes);
 checkQuotes();
