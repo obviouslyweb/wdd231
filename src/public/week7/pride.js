@@ -1,5 +1,5 @@
-quote_list = document.querySelector(".quote-list")
-no_quotes_remind = document.querySelector(".no-quotes")
+quote_list = document.querySelector(".quote-list");
+no_quotes_remind = document.querySelector(".no-quotes");
 quote_button = document.querySelector(".quote-button");
 
 async function getQuotes() {
