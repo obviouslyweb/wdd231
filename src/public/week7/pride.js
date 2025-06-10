@@ -1,6 +1,6 @@
-quote_list = document.querySelector(".quote-list"); // Define the quote list
-no_quotes_remind = document.querySelector(".no-quotes"); // Define the list item saying quotes aren't available
-quote_button = document.querySelector(".quote-button"); // Define the load quotes button
+const quote_list = document.querySelector(".quote-list"); // Define the quote list
+const no_quotes_remind = document.querySelector(".no-quotes"); // Define the list item saying quotes aren't available
+const quote_button = document.querySelector(".quote-button"); // Define the load quotes button
 
 async function getQuotes() { // Obtain the quotes using fetch
     const url = "quotes.json";
@@ -14,7 +14,7 @@ async function getQuotes() { // Obtain the quotes using fetch
 
         quote_list.removeChild(no_quotes_remind);
 
-        quotes = json.books.find(book => book.title === "Pride and Prejudice").quotes;
+        const quotes = json.books.find(book => book.title === "Pride and Prejudice").quotes;
 
         inputQuotes(quotes);
         
@@ -27,7 +27,7 @@ async function getQuotes() { // Obtain the quotes using fetch
 
 function inputQuotes(quotes) { // Inputs provided quotes as separate bullet points in quote list
     quotes.forEach((element) => {
-        list_item = document.createElement("li");
+        const list_item = document.createElement("li");
         list_item.textContent = element;
         quote_list.appendChild(list_item);
     });
@@ -38,7 +38,7 @@ function checkQuotes() { // Check to see if quotes already exist in localStorage
     const storedQuotes = localStorage.getItem("pride-prejudice");
     if (storedQuotes) { // If they are, impor and display them
         quote_list.removeChild(no_quotes_remind);
-        quotes = JSON.parse(storedQuotes);
+        const quotes = JSON.parse(storedQuotes);
         inputQuotes(quotes);
     }
 }
