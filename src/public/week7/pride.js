@@ -14,7 +14,7 @@ async function getQuotes() { // Obtain the quotes using fetch
 
         quote_list.removeChild(no_quotes_remind);
 
-        quotes = json.books[0].quotes;
+        quotes = json.books.find(book => book.title === "Pride and Prejudice").quotes;
 
         inputQuotes(quotes);
         
